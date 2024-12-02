@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy to Clipboard</title>
+</head>
+<body>
+    <button id="copyButton" style="padding: 10px 20px; background-color: #0078d7; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Copy Text
+    </button>
+    <textarea id="textToCopy" style="position: absolute; left: -9999px;">This is the text to copy to the clipboard!</textarea>
+
+    <script>
+        document.getElementById('copyButton').addEventListener('click', function() {
+            const textToCopy = document.getElementById('textToCopy');
+            textToCopy.select();
+            document.execCommand('copy');
+            alert('Text copied to clipboard!');
+        });
+    </script>
+</body>
+</html>
